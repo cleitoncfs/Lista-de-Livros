@@ -18,7 +18,7 @@ function App() {
     }, []);
 
     return (
-        <Router>
+        <Router basename="/Lista-de-Livros">
             <div className="container">
                 <Routes>
                     <Route
