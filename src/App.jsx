@@ -9,7 +9,7 @@ function App() {
     const [livros, setLivros] = useState([]);
 
     useEffect(() => {
-        fetch("/src/assets/livros.json")
+        fetch("/Lista-de-Livros/src/assets/livros.json")
             .then((response) => response.json())
             .then((data) => setLivros(data))
             .catch((error) =>
