@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "titulo": "Dom Casmurro",
+        "autor": "Machado de Assis",
+        "ano": 1899
+    },
+    {
+        "id": 2,
+        "titulo": "Memórias Póstumas de Brás Cubas",
+        "autor": "Machado de Assis",
+        "ano": 1881
+    },
+    {
+        "id": 3,
+        "titulo": "O Cortiço",
+        "autor": "Aluísio Azevedo",
+        "ano": 1890
+    },
+    {
+        "id": 4,
+        "titulo": "Grande Sertão: Veredas",
+        "autor": "João Guimarães Rosa",
+        "ano": 1956
+    },
+    {
+        "id": 5,
+        "titulo": "Capitães da Areia",
+        "autor": "Jorge Amado",
+        "ano": 1937
+    },
+    {
+        "id": 6,
+        "titulo": "Vidas Secas",
+        "autor": "Graciliano Ramos",
+        "ano": 1938
+    },
+    {
+        "id": 7,
+        "titulo": "Iracema",
+        "autor": "José de Alencar",
+        "ano": 1865
+    },
+    {
+        "id": 8,
+        "titulo": "O Guarani",
+        "autor": "José de Alencar",
+        "ano": 1857
+    },
+    {
+        "id": 9,
+        "titulo": "A Moreninha",
+        "autor": "Joaquim Manuel de Macedo",
+        "ano": 1844
+    },
+    {
+        "id": 10,
+        "titulo": "Os Sertões",
+        "autor": "Euclides da Cunha",
+        "ano": 1902
+    },
+    {
+        "id": 11,
+        "titulo": "Macunaíma",
+        "autor": "Mário de Andrade",
+        "ano": 1928
+    },
+    {
+        "id": 12,
+        "titulo": "A Hora da Estrela",
+        "autor": "Clarice Lispector",
+        "ano": 1977
+    },
+    {
+        "id": 13,
+        "titulo": "Quincas Borba",
+        "autor": "Machado de Assis",
+        "ano": 1891
+    },
+    {
+        "id": 14,
+        "titulo": "O Primo Basílio",
+        "autor": "Eça de Queirós",
+        "ano": 1878
+    },
+    {
+        "id": 15,
+        "titulo": "Ensaio Sobre a Cegueira",
+        "autor": "José Saramago",
+        "ano": 1995
+    }
+]
