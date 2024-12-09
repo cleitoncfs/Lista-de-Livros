@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Create from "./pages/Create/Create";
 import View from "./pages/View/View";
+import Edit from "./pages/Edit/Edit";
 import "./styles/styles.css";
 
 function App() {
@@ -34,6 +35,10 @@ function App() {
                     <Route
                         path="/view/:id"
                         element={<View livros={livros} />}
+                    />
+                    <Route
+                        path="/edit/:id"
+                        element={<Edit livros={livros} setLivros={setLivros} />}
                     />
                 </Routes>
             </div>

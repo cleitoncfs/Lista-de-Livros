@@ -1,32 +1,56 @@
-import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom"; // <-- Importar Link aqui
+import { useState, useEffect } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function Create({ livros, setLivros }) {
+function Edit({ livros, setLivros }) {
+    const { id } = useParams();
+    const navigate = useNavigate();
+
+    // Encontrar o livro a ser editado
+    const livro = livros.find((l) => l.id === parseInt(id, 10));
+
+    // Estados para formulários
     const [titulo, setTitulo] = useState("");
     const [autor, setAutor] = useState("");
     const [ano, setAno] = useState("");
 
-    const navigate = useNavigate();
+    useEffect(() => {
+        if (livro) {
+            setTitulo(livro.titulo);
+            setAutor(livro.autor);
+            setAno(livro.ano);
+        }
+    }, [livro]);
+
+    if (!livro) {
+        return (
+            <div>
+                Livro não encontrado. <Link to="/">Voltar</Link>
+            </div>
+        );
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const novoLivro = {
-            id: livros.length > 0 ? livros[livros.length - 1].id + 1 : 1,
+        const livroAtualizado = {
+            ...livro,
             titulo,
             autor,
             ano: parseInt(ano, 10),
         };
-        setLivros([...livros, novoLivro]);
+        const index = livros.findIndex((l) => l.id === livro.id);
+        const novaLista = [...livros];
+        novaLista[index] = livroAtualizado;
+        setLivros(novaLista);
         navigate("/");
     };
 
     return (
         <div>
-            <h1>Criar Novo Livro</h1>
+            <h1>Editar Livro</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Título: </label>
+                    <label>Título:</label>
                     <input
                         type="text"
                         value={titulo}
@@ -35,7 +59,7 @@ function Create({ livros, setLivros }) {
                     />
                 </div>
                 <div>
-                    <label>Autor: </label>
+                    <label>Autor:</label>
                     <input
                         type="text"
                         value={autor}
@@ -44,7 +68,7 @@ function Create({ livros, setLivros }) {
                     />
                 </div>
                 <div>
-                    <label>Ano: </label>
+                    <label>Ano:</label>
                     <input
                         type="number"
                         value={ano}
@@ -52,7 +76,7 @@ function Create({ livros, setLivros }) {
                         required
                     />
                 </div>
-                <button type="submit">Salvar</button>
+                <button type="submit">Salvar Alterações</button>
                 <Link to="/" className="cancel-button">
                     Cancelar
                 </Link>
@@ -61,7 +85,7 @@ function Create({ livros, setLivros }) {
     );
 }
 
-Create.propTypes = {
+Edit.propTypes = {
     livros: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
@@ -73,4 +97,4 @@ Create.propTypes = {
     setLivros: PropTypes.func.isRequired,
 };
 
-export default Create;
+export default Edit;

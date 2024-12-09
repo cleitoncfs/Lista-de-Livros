@@ -3,28 +3,36 @@ import PropTypes from "prop-types";
 
 function Home({ livros, setLivros }) {
     const handleDelete = (id) => {
-        const novosLivros = livros.filter((livro) => livro.id !== id);
-        setLivros(novosLivros);
+        const novaLista = livros.filter((livro) => livro.id !== id);
+        setLivros(novaLista);
     };
 
     return (
         <div>
             <h1>Lista de Livros</h1>
-            <Link to="/create" className="add">
+            <Link to="/create" className="add-button">
                 Adicionar Novo Livro
             </Link>
             <ul>
                 {livros.map((livro) => (
                     <li key={livro.id}>
-                        <Link to={`/view/${livro.id}`}>
+                        <div>
                             {livro.titulo} - {livro.autor} ({livro.ano})
-                        </Link>{" "}
-                        <button
-                            className="delete"
-                            onClick={() => handleDelete(livro.id)}
-                        >
-                            Excluir
-                        </button>
+                        </div>
+                        <div className="button-group">
+                            <Link
+                                to={`/edit/${livro.id}`}
+                                className="edit-button"
+                            >
+                                Editar
+                            </Link>
+                            <button
+                                onClick={() => handleDelete(livro.id)}
+                                className="delete"
+                            >
+                                Excluir
+                            </button>
+                        </div>
                     </li>
                 ))}
             </ul>
@@ -32,6 +40,7 @@ function Home({ livros, setLivros }) {
     );
 }
 
+// Adicionando validação de propriedades
 Home.propTypes = {
     livros: PropTypes.arrayOf(
         PropTypes.shape({

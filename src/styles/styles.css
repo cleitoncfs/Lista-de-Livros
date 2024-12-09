@@ -1,34 +1,70 @@
-/* styles.css */
-body {
-    font-family: "Roboto", Arial, sans-serif;
-    background-color: #f0f2f5;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    line-height: 1.6;
+/* Estilo básico para todos os botões */
+button,
+a.button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
 
-h1,
-h2,
-h3 {
-    color: #2c3e50;
-    margin-bottom: 20px;
+/* Botão de excluir */
+button.delete {
+    background-color: #e74c3c;
+    color: #fff;
 }
 
-.container {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+button.delete:hover {
+    background-color: #c0392b;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+/* Estilo para o botão "Editar" */
+a.edit-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px; /* Ajustado para consistência */
+    border: none;
+    border-radius: 5px; /* Adicionado para consistência */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px; /* Adicionado para espaçamento */
 }
 
+a.edit-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Estilo para o botão "Adicionar Novo Livro" */
+a.add-button {
+    display: inline-block;
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px; /* Adicionado para consistência */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.add-button:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+/* Estilo do item da lista */
 li {
     padding: 15px;
     border: 1px solid #ddd;
@@ -44,67 +80,19 @@ li:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-button {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+/* Agrupamento dos botões (editar e excluir) */
+li .button-group {
+    display: flex;
+    gap: 10px; /* Espaçamento entre botões */
 }
 
-button:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
-}
-
-button.delete {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button.delete:hover {
-    background-color: #c0392b;
-    transform: scale(1.05);
-}
-
-a.add {
-    background-color: #2ecc71;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-a.add:hover {
-    background-color: #27ae60;
-    transform: scale(1.05);
-}
-
-a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #1e5f89;
-    text-decoration: underline;
+/* Formulários (páginas Create e Edit) */
+form {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 form div {
@@ -115,10 +103,11 @@ form label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    color: #2c3e50;
 }
 
 form input,
-form button {
+form textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -127,15 +116,21 @@ form button {
     font-size: 14px;
 }
 
-form input:focus {
+form input:focus,
+form textarea:focus {
     border-color: #3498db;
     outline: none;
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
+/* Botões nos formulários */
 form button {
     background-color: #2ecc71;
     color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -146,18 +141,35 @@ form button:hover {
     transform: scale(1.05);
 }
 
+/* Botão Cancelar */
+form a.cancel-button {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form a.cancel-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-
     li {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    button {
+    li .button-group {
         margin-top: 10px;
     }
 }
