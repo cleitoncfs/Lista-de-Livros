@@ -26,16 +26,16 @@ button.delete:hover {
 a.edit-button {
     background-color: #3498db;
     color: #fff;
-    padding: 10px 15px; /* Ajustado para consistência */
+    padding: 10px 15px;
     border: none;
-    border-radius: 5px; /* Adicionado para consistência */
+    border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-left: 10px; /* Adicionado para espaçamento */
+    margin-left: 10px;
 }
 
 a.edit-button:hover {
@@ -50,7 +50,7 @@ a.add-button {
     color: #fff;
     padding: 10px 15px;
     border: none;
-    border-radius: 5px; /* Adicionado para consistência */
+    border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
@@ -83,7 +83,7 @@ li:hover {
 /* Agrupamento dos botões (editar e excluir) */
 li .button-group {
     display: flex;
-    gap: 10px; /* Espaçamento entre botões */
+    gap: 10px;
 }
 
 /* Formulários (páginas Create e Edit) */
