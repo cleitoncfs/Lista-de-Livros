@@ -8,14 +8,11 @@ export default defineConfig({
         viteStaticCopy({
             targets: [
                 {
-                    src: "public/assets/livros.json", // Caminho do arquivo JSON
-                    dest: "assets", // Diretório de destino no build
+                    src: "public/assets/livros.json", // Verifique este caminho
+                    dest: "assets", // Diretório final
                 },
             ],
         }),
     ],
-    base: "/Lista-de-Livros/",
-    build: {
-        outDir: "build", // Define o diretório de saída como 'build'
-    },
+    base: "/Lista-de-Livros/", // Nome do repositório
 });
