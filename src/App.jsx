@@ -10,11 +10,11 @@ function App() {
     const [livros, setLivros] = useState([]);
 
     useEffect(() => {
-        fetch("/Lista-de-Livros/src/assets/livros.json")
+        fetch("/assets/livros.json")
             .then((response) => response.json())
             .then((data) => setLivros(data))
             .catch((error) =>
-                console.error("Erro ao carregar os livros:", error)
+                console.error("Erro ao carregar os dados:", error)
             );
     }, []);
 
