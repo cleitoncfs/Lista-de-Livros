@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import Footer from "./footer";
 
 function Home({ livros, setLivros }) {
     const handleDelete = (id) => {
@@ -8,7 +9,7 @@ function Home({ livros, setLivros }) {
     };
 
     return (
-        <div>
+        <div id="container" className="container">
             <h1>Lista de Livros</h1>
             <Link to="/create" className="add-button">
                 Adicionar Novo Livro
@@ -36,6 +37,7 @@ function Home({ livros, setLivros }) {
                     </li>
                 ))}
             </ul>
+            <Footer />
         </div>
     );
 }

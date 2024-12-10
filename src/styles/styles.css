@@ -162,6 +162,31 @@ form a.cancel-button:hover {
     transform: scale(1.05);
 }
 
+/* Estilo para o footer */
+footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #2980b9;
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
     li {
