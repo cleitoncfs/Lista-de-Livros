@@ -10,7 +10,8 @@ function App() {
     const [livros, setLivros] = useState([]);
 
     useEffect(() => {
-        fetch("/assets/livros.json")
+        const baseUrl = import.meta.env.BASE_URL; // O valor de base definido em vite.config.js
+        fetch(`${baseUrl}assets/livros.json`)
             .then((response) => response.json())
             .then((data) => setLivros(data))
             .catch((error) =>
